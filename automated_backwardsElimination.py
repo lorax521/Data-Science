@@ -1,5 +1,22 @@
+"""
+# Example X, y:
+
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+
+dat = pd.read_csv('example_data.csv')
+X = dat.iloc[:,:-1].values
+y = dat.iloc[:,-1].values
+
+# Categorical variables example - Scenario; categories in the 4th column of X:
+labelencoder_X = LabelEncoder()
+X[:, 3] = labelencoder_X.fit_transform(X[:, 3])
+onehotencoder = OneHotEncoder(categorical_features = [3])
+X = onehotencoder.fit_transform(X).toarray()
+"""
+
 import statsmodels.formula.api as sm
-    
+
 def setVariables(X, y, indicies):
     X_opt = X[:, indicies]
     regressor_ols = sm.OLS(y, X_opt).fit()
