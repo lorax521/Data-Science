@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Nov 15 20:04:12 2018
-
-@author: jrain
-"""
+# Convolutional neural network - image classification
 
 # Importing the Keras libraries and packages
 from keras.models import Sequential
